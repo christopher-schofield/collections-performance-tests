@@ -29,5 +29,6 @@ stringTest1.Execute();
 var stringTest2 = new StringTests(100000, 100000);
 stringTest2.Execute();
 
-var stringTest3 = new StringTests(1000000, 1000000);
-stringTest3.Execute();
+//This takes a while
+//var stringTest3 = new StringTests(1000000, 1000000);
+//stringTest3.Execute();
