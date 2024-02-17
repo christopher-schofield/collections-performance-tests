@@ -12,14 +12,15 @@ objTest2.Execute();
 //objTest3.Execute();
 
 
+
 var intTest1 = new IntegerTests(10000, 100000000, 10000);
 intTest1.Execute();
 
 var intTest2 = new IntegerTests(100000, 100000000, 100000);
 intTest2.Execute();
 
-var intTest3 = new IntegerTests(1000000, 100000000, 1000000);
-intTest3.Execute();
+//var intTest3 = new IntegerTests(1000000, 100000000, 1000000);
+//intTest3.Execute();
 
 
 

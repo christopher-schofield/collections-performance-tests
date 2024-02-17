@@ -1,12 +1,7 @@
-﻿using System.Diagnostics;
+﻿namespace HashSetTests;
 
-namespace HashSetTests;
-
-public class IntegerTests : BaseTests
+public class IntegerTests : BaseTests<int>
 {
-	public readonly List<int> ListData = new();
-	public readonly HashSet<int> HashSetData = new();
-	public readonly List<int> LookupValues = new();
 	public readonly int TestIterations;
 	public readonly int MaxDataValue;
 	public readonly int MaxLookupValue;
@@ -16,17 +11,10 @@ public class IntegerTests : BaseTests
 		TestIterations = testIterations;
 		MaxDataValue = maxDataValue;
 		MaxLookupValue = maxLookupValue;
+		TestName = nameof(IntegerTests);
 	}
 
-	public override void Execute()
-	{
-		LoadData();
-		TestList();
-		TestHashSet();
-		OutputResults(nameof(IntegerTests));
-	}
-
-	private void LoadData()
+	protected override void LoadData()
 	{
 		var random = new Random();
 		var countLookups = 0;
@@ -40,33 +28,6 @@ public class IntegerTests : BaseTests
 				LookupValues.Add(value);
 			}
 		}
-	}
-
-	private void TestList()
-	{
-		Stopwatch stopWatch = new Stopwatch();
-		stopWatch.Start();
-		var count = 0;
-		foreach (var i in LookupValues)
-		{
-			count++;
-			var listFound = ListData.Contains(i);
-		}
-		stopWatch.Stop();
-		sb.AppendLine($"List lookup time: {stopWatch.ElapsedMilliseconds}");
-	}
-
-	private void TestHashSet()
-	{
-		Stopwatch stopWatch = new Stopwatch();
-		stopWatch.Start();
-		var count = 0;
-		foreach (var i in LookupValues)
-		{
-			count++;
-			var hashSetFound = HashSetData.Contains(i);
-		}
-		stopWatch.Stop();
-		sb.AppendLine($"HashSet lookup time: {stopWatch.ElapsedMilliseconds}");
+		ArrayData = ListData.ToArray();
 	}
 }
