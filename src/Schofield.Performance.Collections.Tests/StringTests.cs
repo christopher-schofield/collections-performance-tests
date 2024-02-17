@@ -1,26 +1,23 @@
-﻿namespace HashSetTests;
+﻿namespace Schofield.Performance.Collections.Tests;
 
-public class IntegerTests : BaseTests<int>
+public class StringTests : BaseTests<string>
 {
 	public readonly int TestIterations;
-	public readonly int MaxDataValue;
 	public readonly int MaxLookupValue;
 
-	public IntegerTests(int testIterations, int maxDataValue, int maxLookupValue)
+	public StringTests(int testIterations, int maxLookupValue)
 	{
 		TestIterations = testIterations;
-		MaxDataValue = maxDataValue;
 		MaxLookupValue = maxLookupValue;
-		TestName = nameof(IntegerTests);
+		TestName = nameof(StringTests);
 	}
 
 	protected override void LoadData()
 	{
-		var random = new Random();
 		var countLookups = 0;
 		for (var i = 0; i < TestIterations; i++)
 		{
-			var value = random.Next(0, MaxDataValue);
+			var value = Guid.NewGuid().ToString();
 			ListData.Add(value);
 			HashSetData.Add(value);
 			if (++countLookups <= MaxLookupValue)

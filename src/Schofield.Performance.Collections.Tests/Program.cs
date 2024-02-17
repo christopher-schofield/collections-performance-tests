@@ -1,4 +1,4 @@
-﻿using HashSetTests;
+﻿using Schofield.Performance.Collections.Tests;
 
 
 var objTest1 = new ObjectTests(10000, 10000);

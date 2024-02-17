@@ -1,7 +1,7 @@
 ﻿using System.Diagnostics;
 using System.Text;
 
-namespace HashSetTests;
+namespace Schofield.Performance.Collections.Tests;
 
 public abstract class BaseTests<T>
 {

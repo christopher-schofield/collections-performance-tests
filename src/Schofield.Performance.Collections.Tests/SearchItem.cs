@@ -1,4 +1,4 @@
-﻿namespace HashSetTests;
+﻿namespace Schofield.Performance.Collections.Tests;
 
 public class SearchItem
 {

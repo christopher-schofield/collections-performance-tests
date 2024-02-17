@@ -1,10 +1,10 @@
-﻿namespace HashSetTests;
+﻿namespace Schofield.Performance.Collections.Tests;
 
 public class ObjectTests : BaseTests<SearchItem>
 {
 	public readonly int TestIterations;
 	public readonly int MaxLookupValue;
-	
+
 	public ObjectTests(int testIterations, int maxLookupValue)
 	{
 		TestIterations = testIterations;
