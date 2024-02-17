@@ -5,8 +5,6 @@ Return to [Schofield Benchmarking](../../README.md)
 A C# project demonstrating the lookup performance between Lists, HashSets, and Arrays using `Contains()` and `Equals()`.
 
 ## Results
-The ObjectTests and StringTests were run with 10,000, 100,000, iterations
-The IntegerTests were run with 10,000, 100,000, and 1,000,000 iterations
 
 ```
 ObjectTests Results
@@ -60,7 +58,7 @@ TestArrayEquals(100000) found 100000 items in 159006 milliseconds
 
 ## Analysis
 1. While C# arrays do not implement collections, they are included in this benchmark as quasi-baseline.
-1. For most lookups using the `Contains()` method, the HashSet type is significantly faster and provides the fastest lookups.
-1. Lookup performance in a HashSet of a class type is dependent on how the `Equals()` and `GetHashCode()` methods are implemented.
-1. Overall lookup performance for non-HashSets is dependent upon the number of items in the collection to be searched.
+1. For most lookups using the `Contains()` method, the HashSet type provides the fastest lookups.
+1. Lookup performance of a HashSet of type class is dependent on how the `Equals()` and `GetHashCode()` methods are implemented.
+1. Overall lookup performance for non-HashSets is dependent upon the number of items in the collection to be searched. In general, the more items in the collection, the slower the performance.
 1. The type of an object in a List or HashSet will vary performance results. For example, integer lookup performance is much faster than string or object lookup performance.

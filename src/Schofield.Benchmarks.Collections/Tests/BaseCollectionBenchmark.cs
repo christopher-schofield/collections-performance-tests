@@ -1,4 +1,5 @@
-﻿using System.Diagnostics;
+﻿using System;
+using System.Diagnostics;
 using System.Text;
 
 namespace Schofield.Benchmarks.Collections.Tests;
@@ -32,12 +33,17 @@ public abstract class BaseCollectionBenchmark<T>
         Console.WriteLine(sb.ToString());
     }
 
-    protected void TestListEquals()
+    private void AppendMessage(string functionName, int itemCount, int foundCount, long elapsedMilliseconds)
+    {
+		sb.AppendLine($"{functionName}[{itemCount}] found {foundCount} items in {elapsedMilliseconds} milliseconds");
+	}
+
+	protected void TestListEquals()
     {
         var sw = Stopwatch.StartNew();
         var found = LookupValues.Where(w => ListData.Any(f => f.Equals(w))).ToList();
         sw.Stop();
-        sb.AppendLine($"{nameof(TestListEquals)}({ListData.Count}) found {found.Count} items in {sw.ElapsedMilliseconds} milliseconds");
+		AppendMessage(nameof(TestListEquals), ListData.Count, found.Count, sw.ElapsedMilliseconds);
     }
 
     protected void TestListContains()
@@ -45,38 +51,38 @@ public abstract class BaseCollectionBenchmark<T>
         var sw = Stopwatch.StartNew();
         var found = LookupValues.Where(ListData.Contains).ToList();
         sw.Stop();
-        sb.AppendLine($"{nameof(TestListContains)}({ListData.Count}) found {found.Count} items in {sw.ElapsedMilliseconds} milliseconds");
-    }
+		AppendMessage(nameof(TestListContains), ListData.Count, found.Count, sw.ElapsedMilliseconds);
+	}
 
-    protected void TestHashSetEquals()
+	protected void TestHashSetEquals()
     {
         var sw = Stopwatch.StartNew();
         var found = LookupValues.Where(w => HashSetData.Any(f => f.Equals(w))).ToList();
         sw.Stop();
-        sb.AppendLine($"{nameof(TestHashSetEquals)}({HashSetData.Count}) found {found.Count} items in {sw.ElapsedMilliseconds} milliseconds");
-    }
+		AppendMessage(nameof(TestHashSetEquals), ListData.Count, found.Count, sw.ElapsedMilliseconds);
+	}
 
-    protected void TestHashSetContains()
+	protected void TestHashSetContains()
     {
         var sw = Stopwatch.StartNew();
         var found = LookupValues.Where(HashSetData.Contains).ToList();
         sw.Stop();
-        sb.AppendLine($"{nameof(TestHashSetContains)}({HashSetData.Count}) found {found.Count} items in {sw.ElapsedMilliseconds} milliseconds");
-    }
+		AppendMessage(nameof(TestHashSetContains), ListData.Count, found.Count, sw.ElapsedMilliseconds);
+	}
 
-    protected void TestArrayEquals()
+	protected void TestArrayEquals()
     {
         var sw = Stopwatch.StartNew();
         var found = LookupValues.Where(w => ArrayData!.Any(f => f.Equals(w))).ToList();
         sw.Stop();
-        sb.AppendLine($"{nameof(TestArrayEquals)}({ListData.Count}) found {found.Count} items in {sw.ElapsedMilliseconds} milliseconds");
-    }
+		AppendMessage(nameof(TestArrayEquals), ListData.Count, found.Count, sw.ElapsedMilliseconds);
+	}
 
-    protected void TestArrayContains()
+	protected void TestArrayContains()
     {
         var sw = Stopwatch.StartNew();
         var found = LookupValues.Where(ArrayData!.Contains).ToList();
         sw.Stop();
-        sb.AppendLine($"{nameof(TestArrayContains)}({ListData.Count}) found {found.Count} items in {sw.ElapsedMilliseconds} milliseconds");
-    }
+		AppendMessage(nameof(TestArrayContains), ListData.Count, found.Count, sw.ElapsedMilliseconds);
+	}
 }
