@@ -9,7 +9,7 @@ public class ObjectBenchmark : BaseCollectionBenchmark<SearchItem>
 	public ObjectBenchmark(int sizeOfCollectionToSearchIn, int sizeOfItemsToFind)
 		: base(sizeOfCollectionToSearchIn, sizeOfItemsToFind) { }
 
-	protected override void LoadData()
+	protected override void LoadCollections()
 	{
 		var countLookups = 0;
 		for (var i = 0; i < SizeOfCollectionToSearchIn; i++)

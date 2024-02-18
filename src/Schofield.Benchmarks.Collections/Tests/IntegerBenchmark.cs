@@ -11,7 +11,7 @@ public class IntegerBenchmark : BaseCollectionBenchmark<int>
 		MaxIntegerValue = maxIntegerValue;
 	}
 
-	protected override void LoadData()
+	protected override void LoadCollections()
 	{
 		var random = new Random();
 		var countLookups = 0;

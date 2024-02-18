@@ -22,7 +22,7 @@ public abstract class BaseCollectionBenchmark<T>
 		Validate();
 	}
 
-	protected abstract void LoadData();
+	protected abstract void LoadCollections();
 
 	protected void Validate()
 	{
@@ -38,7 +38,7 @@ public abstract class BaseCollectionBenchmark<T>
 
 	public void Execute()
 	{
-		LoadData();
+		LoadCollections();
 
 		var tasks = new List<Task>
 		{
