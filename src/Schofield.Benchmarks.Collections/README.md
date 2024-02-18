@@ -82,8 +82,8 @@ HashSetEquals found 50000 items within 10000000 items in 24976 milliseconds
 ```
 
 ## Analysis
-1. While C# arrays do not implement collections, they are included in this benchmark as quasi-baseline.
-1. For most lookups using the `Contains()` method, the HashSet type provides the fastest lookups.
-1. Lookup performance of a HashSet of type class is dependent on how the `Equals()` and `GetHashCode()` methods are implemented.
-1. Overall lookup performance for non-HashSets is dependent upon the number of items in the collection to be searched. In general, the more items in the collection, the slower the performance.
-1. The type of an object in a List or HashSet will vary performance results. For example, integer lookup performance is much faster than string or object lookup performance.
+1. While C# arrays do not implement collections, they are included in this benchmark because they are a type of collection.
+1. For most lookup comparisons using the `Contains()` method, the `HashSet<T>` type performs the fastest lookups.
+1. Lookup performance of a `HashSet<Class>` is dependent on how the `Equals()` and `GetHashCode()` methods are implemented.
+1. Overall lookup performance for non-HashSets is dependent upon the number of items in the collection to be searched. Obviously, the more items in the lookup or search collections, the slower the performance.
+1. The type of an object within a collection does not necessarily affect performance.
