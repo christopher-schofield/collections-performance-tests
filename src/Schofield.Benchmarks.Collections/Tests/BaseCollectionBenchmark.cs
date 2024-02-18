@@ -39,12 +39,18 @@ public abstract class BaseCollectionBenchmark<T>
 	public void Execute()
 	{
 		LoadData();
-		ListContains();
-		ListEquals();
-		HashSetContains();
-		HashSetEquals();
-		ArrayContains();
-		ArrayEquals();
+
+		var tasks = new List<Task>
+		{
+			Task.Factory.StartNew(ListContains),
+			Task.Factory.StartNew(ListEquals),
+			Task.Factory.StartNew(HashSetContains),
+			Task.Factory.StartNew(HashSetEquals),
+			Task.Factory.StartNew(ArrayContains),
+			Task.Factory.StartNew(ArrayEquals)
+		};
+		Task.WaitAll(tasks.ToArray());
+
 		OutputResults();
 	}
 
