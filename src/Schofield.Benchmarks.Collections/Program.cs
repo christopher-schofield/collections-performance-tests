@@ -2,35 +2,16 @@
 
 
 
-var objTest1 = new ObjectBenchmark(10000, 10000);
-objTest1.Execute();
-
-//var objTest2 = new ObjectBenchmark(100000, 100000);
-//objTest2.Execute();
-
+new ObjectBenchmark(100000, 10000).Execute();
+new ObjectBenchmark(1000000, 25000).Execute();
 //This takes a while
-//var objTest3 = new ObjectTests(1000000, 1000000);
-//objTest3.Execute();
+new ObjectBenchmark(10000000, 50000).Execute();
 
+new IntegerBenchmark(1000000, 10000, 100000000).Execute();
+new IntegerBenchmark(10000000, 25000, 100000000).Execute();
+new IntegerBenchmark(100000000, 50000, 100000000).Execute();
 
-
-var intTest1 = new IntegerBenchmark(10000, 100000000, 10000);
-intTest1.Execute();
-
-//var intTest2 = new IntegerBenchmark(100000, 100000000, 100000);
-//intTest2.Execute();
-
-//var intTest3 = new IntegerTests(1000000, 100000000, 1000000);
-//intTest3.Execute();
-
-
-
-var stringTest1 = new StringBenchmark(10000, 10000);
-stringTest1.Execute();
-
-//var stringTest2 = new StringBenchmark(100000, 100000);
-//stringTest2.Execute();
-
+new StringBenchmark(100000, 10000).Execute();
+new StringBenchmark(1000000, 25000).Execute();
 //This takes a while
-//var stringTest3 = new StringTests(1000000, 1000000);
-//stringTest3.Execute();
+new StringBenchmark(10000000, 50000).Execute();

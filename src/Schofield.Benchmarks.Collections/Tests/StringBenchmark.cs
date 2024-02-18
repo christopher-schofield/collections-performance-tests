@@ -2,29 +2,24 @@
 
 public class StringBenchmark : BaseCollectionBenchmark<string>
 {
-    public readonly int TestIterations;
-    public readonly int MaxLookupValue;
+	public override string BenchmarkName => nameof(StringBenchmark);
 
-    public StringBenchmark(int testIterations, int maxLookupValue)
-    {
-        TestIterations = testIterations;
-        MaxLookupValue = maxLookupValue;
-        TestName = nameof(StringBenchmark);
-    }
+	public StringBenchmark(int sizeOfCollectionToSearchIn, int sizeOfItemsToFind)
+		: base(sizeOfCollectionToSearchIn, sizeOfItemsToFind) { }
 
-    protected override void LoadData()
-    {
-        var countLookups = 0;
-        for (var i = 0; i < TestIterations; i++)
-        {
-            var value = Guid.NewGuid().ToString();
-            ListData.Add(value);
-            HashSetData.Add(value);
-            if (++countLookups <= MaxLookupValue)
-            {
-                LookupValues.Add(value);
-            }
-        }
-        ArrayData = ListData.ToArray();
-    }
+	protected override void LoadData()
+	{
+		var countLookups = 0;
+		for (var i = 0; i < SizeOfCollectionToSearchIn; i++)
+		{
+			var value = Guid.NewGuid().ToString();
+			ListData.Add(value);
+			HashSetData.Add(value);
+			if (++countLookups <= SizeOfItemsToFind)
+			{
+				LookupValues.Add(value);
+			}
+		}
+		ArrayData = ListData.ToArray();
+	}
 }
