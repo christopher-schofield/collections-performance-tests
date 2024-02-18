@@ -1,6 +1,6 @@
-# Schofield.Benchmarks.Collections
+# .NET Collections Performance Benchmarking
 
-Return to [Schofield Benchmarking](../../README.md)
+Return to [DotNet Benchmarking](../../README.md)
 
 A C# project demonstrating the lookup performance between Lists, HashSets, and Arrays using `Contains()` and `Equals()`.
 
@@ -81,7 +81,7 @@ ListEquals found 50000 items within 10000000 items in 24641 milliseconds
 HashSetEquals found 50000 items within 10000000 items in 24976 milliseconds
 ```
 
-## Analysis
+## Results
 1. While C# arrays do not implement collections, they are included in this benchmark because they are a type of collection.
 1. For most lookup comparisons using the `Contains()` method, the `HashSet<T>` type performs the fastest lookups.
 1. Lookup performance of a `HashSet<Class>` is dependent on how the `Equals()` and `GetHashCode()` methods are implemented.

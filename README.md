@@ -1,4 +1,4 @@
-# Schofield.Benchmarks
-C# projects benchmarking various performance metrics in code scenarios.
+# Schofield Benchmarks Project
+C# projects benchmarking various performance metrics in multiple code scenarios.
 
-- [Collections Performance Benchmarking](src/Schofield.Benchmarks.Collections/README.md)
+- [.NET Collections Performance Benchmarking](src/DotNet.Benchmarks.Collections/README.md)

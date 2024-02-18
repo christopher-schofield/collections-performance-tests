@@ -1,6 +1,6 @@
-﻿using Schofield.Benchmarks.Collections.Models;
+﻿using DotNet.Benchmarks.Collections.Models;
 
-namespace Schofield.Benchmarks.Collections.Tests;
+namespace DotNet.Benchmarks.Collections.Tests;
 
 public class ObjectBenchmark : BaseCollectionBenchmark<SearchItem>
 {

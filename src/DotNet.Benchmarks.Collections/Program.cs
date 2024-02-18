@@ -1,4 +1,4 @@
-﻿using Schofield.Benchmarks.Collections.Tests;
+﻿using DotNet.Benchmarks.Collections.Tests;
 
 
 new ObjectBenchmark(100000, 10000).Execute();

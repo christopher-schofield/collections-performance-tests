@@ -1,7 +1,7 @@
 ﻿using System.Diagnostics;
 using System.Text;
 
-namespace Schofield.Benchmarks.Collections.Tests;
+namespace DotNet.Benchmarks.Collections.Tests;
 
 public abstract class BaseCollectionBenchmark<T>
 {

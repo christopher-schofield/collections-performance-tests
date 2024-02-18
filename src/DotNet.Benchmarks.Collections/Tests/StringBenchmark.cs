@@ -1,4 +1,4 @@
-﻿namespace Schofield.Benchmarks.Collections.Tests;
+﻿namespace DotNet.Benchmarks.Collections.Tests;
 
 public class StringBenchmark : BaseCollectionBenchmark<string>
 {
